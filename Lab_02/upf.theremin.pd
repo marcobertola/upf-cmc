@@ -11,7 +11,7 @@
 #X obj 44 48 cnv 15 80 160 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #X obj 59 66 vsl 15 128 0 127 0 0 notes r_notes midi_notes 0 -9 0 10
--191407 -1 -1 9700 1;
+-191407 -1 -1 5400 1;
 #N canvas 438 178 647 546 theremin 0;
 #X obj 151 97 r db;
 #X obj 151 127 dbtorms;
@@ -69,7 +69,7 @@
 #X obj 45 223 cnv 15 80 160 empty empty empty 20 12 0 14 -228856 -66577
 0;
 #X obj 60 241 vsl 15 128 0 10 0 0 v_freq r_freq frequency 0 -9 0 10
--191407 -1 -1 6350 1;
+-191407 -1 -1 12700 1;
 #X text 83 354 0Hz;
 #X obj 149 239 vradio 15 1 0 9 v_tones r_tones amplitude 0 -8 0 10
 -262144 -1 -1 3;
@@ -77,3 +77,4 @@
 #X obj 328 13 upf.performance;
 #X text 171 357 8 semitones;
 #X text 78 237 10Hz;
+#X text 26 428 https://github.com/marcobertola/upf-cmc;
