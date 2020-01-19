@@ -1,0 +1,79 @@
+#N canvas 334 265 467 486 12;
+#X declare -path ./abstractions;
+#X obj 24 23 cnv 15 300 400 empty empty empty 20 12 0 14 -191407 -66577
+0;
+#X obj 139 48 cnv 15 160 160 empty empty empty 20 12 0 14 -228856 -66577
+0;
+#X obj 154 66 vsl 15 128 0 100 0 0 db r_db gain 0 -9 0 10 -262144 -1
+-1 7620 1;
+#X text 172 62 100db;
+#X text 177 179 0db;
+#X obj 44 48 cnv 15 80 160 empty empty empty 20 12 0 14 -228856 -66577
+0;
+#X obj 59 66 vsl 15 128 0 127 0 0 notes r_notes midi_notes 0 -9 0 10
+-191407 -1 -1 5400 1;
+#N canvas 438 178 647 546 theremin 0;
+#X obj 151 97 r db;
+#X obj 151 127 dbtorms;
+#X obj 59 210 osc~;
+#X obj 61 251 *~;
+#X obj 152 207 vline~;
+#X msg 152 171 \$1 10;
+#X obj 56 26 r notes;
+#X obj 61 397 dac~;
+#X obj 239 173 r dsp_on;
+#X obj 239 248 vline~;
+#X obj 61 329 *~;
+#X msg 239 212 \$1 100;
+#X obj 57 64 upf.midi_vibrato;
+#X obj 405 21 declare -path ./abstractions;
+#N canvas 871 216 450 300 init 0;
+#X obj 122 25 loadbang;
+#X msg 214 101 10;
+#X obj 28 183 s r_notes;
+#X obj 139 180 s r_db;
+#X obj 212 183 s r_freq;
+#X obj 292 183 s r_tones;
+#X msg 74 103 54;
+#X msg 149 100 60;
+#X msg 272 98 3;
+#X connect 0 0 6 0;
+#X connect 0 0 7 0;
+#X connect 0 0 1 0;
+#X connect 0 0 8 0;
+#X connect 1 0 4 0;
+#X connect 6 0 2 0;
+#X connect 7 0 3 0;
+#X connect 8 0 5 0;
+#X restore 405 46 pd init;
+#X connect 0 0 1 0;
+#X connect 1 0 5 0;
+#X connect 2 0 3 0;
+#X connect 3 0 10 0;
+#X connect 4 0 3 1;
+#X connect 5 0 4 0;
+#X connect 6 0 12 0;
+#X connect 8 0 11 0;
+#X connect 9 0 10 1;
+#X connect 10 0 7 0;
+#X connect 10 0 7 1;
+#X connect 11 0 9 0;
+#X connect 12 0 2 0;
+#X restore 47 390 pd theremin;
+#X text 77 62 127;
+#X text 82 179 0;
+#X obj 260 61 tgl 30 0 dsp_on empty on 10 40 0 14 -262144 -1 -1 0 1
+;
+#X obj 140 223 cnv 15 160 160 empty empty empty 20 12 0 14 -228856
+-66577 0;
+#X obj 45 223 cnv 15 80 160 empty empty empty 20 12 0 14 -228856 -66577
+0;
+#X obj 60 241 vsl 15 128 0 20 0 0 v_freq r_freq frequency 0 -9 0 10
+-191407 -1 -1 6350 1;
+#X text 78 237 20Hz;
+#X text 83 354 0Hz;
+#X obj 149 239 vradio 15 1 0 9 v_tones r_tones amplitude 0 -8 0 10
+-262144 -1 -1 1;
+#X text 172 296 0 semitones;
+#X text 173 237 -4 semitones;
+#X text 171 354 +4 semitones;

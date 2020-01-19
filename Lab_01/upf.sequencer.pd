@@ -1,0 +1,35 @@
+#N canvas 222 201 530 263 12;
+#X declare -path ./abstractions;
+#X obj 110 7 declare -path ./abstractions;
+#X obj 104 180 hradio 15 1 0 16 empty empty empty 0 -8 0 10 -262144
+-1 -1 3;
+#X obj 104 107 tgl 20 0 s_start empty Start_sequencer -40 -10 0 12
+-262144 -1 -1 0 1;
+#X msg 339 107 reset;
+#N canvas 676 221 500 354 sequencer 0;
+#X obj 119 37 inlet;
+#X obj 170 36 inlet;
+#X obj 302 37 inlet;
+#X obj 141 275 outlet;
+#X obj 141 197 metro;
+#X obj 195 102 loadbang;
+#X msg 194 134 120;
+#X obj 291 166 s bpm;
+#X obj 173 166 upf.bpm_to_ms;
+#X obj 141 237 upf.counter 16;
+#X connect 0 0 4 0;
+#X connect 1 0 8 0;
+#X connect 2 0 9 0;
+#X connect 4 0 9 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 6 0 8 0;
+#X connect 8 0 4 1;
+#X connect 9 0 3 0;
+#X restore 104 141 pd sequencer;
+#X f 34;
+#X floatatom 221 112 5 0 0 2 Bpm bpm -;
+#X connect 2 0 4 0;
+#X connect 3 0 4 2;
+#X connect 4 0 1 0;
+#X connect 5 0 4 1;
