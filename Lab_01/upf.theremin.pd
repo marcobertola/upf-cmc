@@ -1,5 +1,5 @@
 #N canvas 249 247 699 508 12;
-#X declare -path ./abstractions;
+#X declare -path ./../abstractions;
 #X obj 24 23 cnv 15 300 400 empty empty empty 20 12 0 14 -191407 -66577
 0;
 #X obj 139 48 cnv 15 160 160 empty empty empty 20 12 0 14 -228856 -66577
@@ -12,7 +12,7 @@
 0;
 #X obj 59 66 vsl 15 128 0 127 0 0 notes r_notes midi_notes 0 -9 0 10
 -191407 -1 -1 5400 1;
-#N canvas 438 178 647 546 theremin 0;
+#N canvas 475 340 647 546 theremin 0;
 #X obj 151 97 r db;
 #X obj 151 127 dbtorms;
 #X obj 59 210 osc~;
@@ -26,7 +26,6 @@
 #X obj 61 329 *~;
 #X msg 239 212 \$1 100;
 #X obj 57 64 upf.midi_vibrato;
-#X obj 405 21 declare -path ./abstractions;
 #N canvas 871 216 450 300 init 0;
 #X obj 122 25 loadbang;
 #X msg 214 101 10;
@@ -78,3 +77,4 @@
 #X text 171 357 8 semitones;
 #X text 78 237 10Hz;
 #X text 26 428 https://github.com/marcobertola/upf-cmc;
+#X obj 25 451 declare -path ./../abstractions;

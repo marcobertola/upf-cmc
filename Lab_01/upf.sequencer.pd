@@ -1,6 +1,5 @@
-#N canvas 222 201 428 242 12;
-#X declare -path ./abstractions;
-#X obj 189 5 declare -path ./abstractions;
+#N canvas 221 201 428 242 12;
+#X declare -path ./../abstractions;
 #X text 7 193 https://github.com/marcobertola/upf-cmc;
 #X obj 5 44 cnv 15 340 140 empty empty empty 20 12 0 14 -191407 -66577
 0;
@@ -9,14 +8,14 @@
 #X obj 52 74 tgl 20 0 s_start empty Start_sequencer -40 -10 0 12 -262144
 -1 -1 0 1;
 #X msg 287 74 reset;
-#N canvas 676 221 500 354 sequencer 0;
+#N canvas 676 221 500 354 sequencer 1;
 #X obj 119 37 inlet;
 #X obj 170 36 inlet;
 #X obj 302 37 inlet;
 #X obj 141 275 outlet;
 #X obj 141 197 metro;
 #X obj 195 102 loadbang;
-#X msg 194 134 120;
+#X msg 195 126 120;
 #X obj 291 166 s bpm;
 #X obj 173 166 upf.bpm_to_ms;
 #X obj 141 237 upf.counter 16;
@@ -32,7 +31,8 @@
 #X restore 52 108 pd sequencer;
 #X f 34;
 #X floatatom 169 79 5 0 0 2 Bpm bpm -;
-#X connect 4 0 6 0;
-#X connect 5 0 6 2;
-#X connect 6 0 3 0;
-#X connect 7 0 6 1;
+#X obj 189 5 declare -path ./../abstractions;
+#X connect 3 0 5 0;
+#X connect 4 0 5 2;
+#X connect 5 0 2 0;
+#X connect 6 0 5 1;
