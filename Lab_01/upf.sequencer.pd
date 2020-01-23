@@ -8,7 +8,7 @@
 #X obj 52 74 tgl 20 0 s_start empty Start_sequencer -40 -10 0 12 -262144
 -1 -1 0 1;
 #X msg 287 74 reset;
-#N canvas 676 221 500 354 sequencer 1;
+#N canvas 676 221 500 354 sequencer 0;
 #X obj 119 37 inlet;
 #X obj 170 36 inlet;
 #X obj 302 37 inlet;

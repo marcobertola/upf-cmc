@@ -1,0 +1,36 @@
+#N canvas 174 313 1085 571 12;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array sample_00 8256 float 0;
+#X coords 0 1 8255 -1 60 40 1 0 0;
+#X restore 37 41 graph;
+#X obj 556 121 soundfiler;
+#X floatatom 556 143 0 0 0 0 - - -;
+#X msg 556 87 read -resize ../sounds/909-samples/bd01.wav sample_00
+\;;
+#X obj 556 50 loadbang;
+#X obj 252 90 tabplay~ sample_00;
+#X obj 252 46 r sample_00;
+#X obj 252 123 throw~ sign_00;
+#X obj 556 252 soundfiler;
+#X floatatom 556 274 0 0 0 0 - - -;
+#X obj 556 181 loadbang;
+#X obj 254 172 r sample_01;
+#X obj 254 216 tabplay~ sample_01;
+#X obj 254 249 throw~ sign_01;
+#N canvas 0 23 450 300 (subpatch) 0;
+#X array sample_01 21738 float 0;
+#X coords 0 1 21737 -1 60 40 1 0 0;
+#X restore 37 99 graph;
+#X msg 556 218 read -resize ../sounds/909-samples/oh02.wav sample_01
+\;;
+#X connect 1 0 2 0;
+#X connect 3 0 1 0;
+#X connect 4 0 3 0;
+#X connect 5 0 7 0;
+#X connect 6 0 5 0;
+#X connect 8 0 9 0;
+#X connect 10 0 15 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 15 0 8 0;
+#X coords 0 -1 1 1 100 140 2 20 20;
