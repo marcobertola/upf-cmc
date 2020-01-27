@@ -7,7 +7,7 @@
 1;
 #X obj 523 27 loadbang;
 #X msg 523 54 1;
-#X obj 54 59 cnv 15 250 100 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 51 51 cnv 15 298 118 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array output_l 512 float 5;
@@ -27,8 +27,8 @@
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 0;
-#X coords 0 1 511 -1 100 70 1 0 0;
-#X restore 70 80 graph;
+#X coords 0 1 511 -1 120 90 1 0 0;
+#X restore 70 70 graph;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array output_r 512 float 5;
 #A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
@@ -47,8 +47,8 @@
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 0;
-#X coords 0 1 511 -1 100 70 1 0 0;
-#X restore 179 80 graph;
+#X coords 0 1 511 -1 120 90 1 0 0;
+#X restore 211 71 graph;
 #X obj 528 119 metro 60;
 #X connect 0 0 1 0;
 #X connect 2 0 3 0;
@@ -57,4 +57,4 @@
 #X connect 6 0 4 0;
 #X connect 10 0 3 0;
 #X connect 10 0 1 0;
-#X coords 0 -1 1 1 260 120 2 50 50;
+#X coords 0 -1 1 1 300 120 2 50 50;

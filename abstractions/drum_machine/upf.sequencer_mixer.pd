@@ -1,17 +1,17 @@
 #N canvas 610 214 714 596 12;
-#X obj 21 91 cnv 15 300 200 empty empty empty 20 12 0 14 -233017 -66577
+#X obj 21 91 cnv 15 298 198 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 127 481 dac~;
 #X obj 27 50 catch~ sign_00;
 #X obj 139 49 catch~ sign_01;
 #X obj 252 48 catch~ sign_02;
 #X obj 364 47 catch~ sign_03;
-#X obj 36 96 upf.gain~;
-#X obj 89 97 upf.gain~;
-#X obj 141 97 upf.gain~;
-#X obj 193 97 upf.gain~;
+#X obj 37 100 upf.gain~;
+#X obj 90 100 upf.gain~;
+#X obj 142 100 upf.gain~;
+#X obj 194 100 upf.gain~;
 #X obj 512 48 sig~ 1;
-#X obj 265 98 upf.gain~;
+#X obj 266 100 upf.gain~;
 #X obj 116 428 *~;
 #X text 257 260 master;
 #X text 38 260 ch1;
