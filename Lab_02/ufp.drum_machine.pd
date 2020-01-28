@@ -1,16 +1,16 @@
-#N canvas 328 186 593 724 12;
+#N canvas 328 186 605 722 12;
 #X declare -path ./../abstractions;
 #X declare -path ./../abstractions/drum_machine;
 #X text 9 7 https://github.com/marcobertola/upf-cmc;
 #X obj 11 655 declare -path ./../abstractions;
 #X obj 11 676 declare -path ./../abstractions/drum_machine;
-#X obj 37 40 cnv 15 450 600 empty empty empty 20 12 0 14 -261682 -66577
+#X obj 37 40 cnv 15 470 600 empty empty empty 20 12 0 14 -261682 -66577
 0;
-#X obj 61 138 upf.step_selector;
-#X obj 372 383 upf.sampler_4_sequencer;
-#X obj 61 301 upf.sequencer_mixer;
-#X obj 282 138 upf.measure_selector;
-#X obj 61 504 upf.master_output~;
-#X obj 62 92 upf.sequencer_gui;
-#X text 61 65 DRUMS_ME;
-#X text 284 104 tempo division;
+#X obj 54 138 upf.step_selector;
+#X obj 364 141 upf.sampler_4_sequencer;
+#X obj 54 301 upf.sequencer_mixer;
+#X obj 275 138 upf.measure_selector;
+#X obj 54 504 upf.master_output~;
+#X obj 55 92 upf.sequencer_gui;
+#X text 54 65 DRUMS_ME;
+#X text 277 104 tempo division;
