@@ -1,4 +1,4 @@
-#N canvas 328 186 605 722 12;
+#N canvas 429 140 984 798 12;
 #X declare -path ./../abstractions;
 #X declare -path ./../abstractions/drum_machine;
 #X text 9 7 https://github.com/marcobertola/upf-cmc;
@@ -14,3 +14,9 @@
 #X obj 55 92 upf.sequencer_gui;
 #X text 54 65 DRUMS_ME;
 #X text 277 104 tempo division;
+#X text 12 714 TODO: Audio samples are now reloaded on realtime (very
+bad and CPU consuming!). This was the consequence of a very quick implementation
+of a simple "humanizer" (The first version loaded the audio samples
+only during patch launch). Next improvement is to save/cache samples
+in different tables and just switch the pointer while reading...defenetly
+more CPU efficent, f 96;
