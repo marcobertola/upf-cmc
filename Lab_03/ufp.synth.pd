@@ -1,7 +1,8 @@
-#N canvas 249 106 1094 684 12;
+#N canvas 567 163 1094 684 12;
 #X declare -path ./../abstractions;
 #X declare -path ./../abstractions/drum_machine;
 #X declare -path ./../abstractions/synth;
+#X declare -path ./../externals;
 #X text 9 7 https://github.com/marcobertola/upf-cmc;
 #X obj 56 505 declare -path ./../abstractions;
 #X obj 56 526 declare -path ./../abstractions/drum_machine;
@@ -52,3 +53,4 @@
 #X obj 323 314 upf.synth_mode;
 #X text 50 54 Start sequencer or connect and setup your MIDI keyboard
 ;
+#X obj 55 570 declare -path ./../externals;

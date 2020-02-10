@@ -1,35 +1,35 @@
-#N canvas 402 201 653 450 12;
+#N canvas 452 265 653 450 12;
 #X obj 45 100 vsl 20 128 20 1000 0 0 empty empty empty 0 -9 0 10 -162280
--1 -1 8837 1;
+-1 -1 4924 1;
 #X floatatom 34 237 5 0 0 0 - - -;
-#X obj 81 100 vsl 20 128 0 0.98 0 0 empty empty empty 0 -9 0 10 -162280
--1 -1 2980 1;
+#X obj 81 100 vsl 20 128 0 0.98 0 0 empty fdelay_internal empty 0 -9
+0 10 -162280 -1 -1 1296 1;
 #X floatatom 76 237 5 0 0 0 - - -;
 #X text 34 256 ms;
 #X obj 58 -7 loadbang;
 #X text 71 55 delay;
 #X text 37 80 time;
 #X text 74 80 feed;
-#X msg 42 22 100;
 #X text 68 256 factor;
 #X obj 115 296 s fdelay;
 #X obj 11 295 s delay_time;
 #X obj 119 100 vsl 20 128 0 1 0 0 empty empty empty 0 -9 0 10 -162280
--1 -1 6000 1;
+-1 -1 1270 1;
 #X text 121 79 wet;
 #X floatatom 117 237 5 0 0 0 - - -;
 #X text 117 255 wet;
 #X obj 186 297 s wet;
-#X msg 86 22 0.1;
+#X msg 42 22 400;
+#X msg 86 22 0.6;
 #X connect 0 0 1 0;
-#X connect 1 0 12 0;
+#X connect 1 0 11 0;
 #X connect 2 0 3 0;
-#X connect 3 0 11 0;
-#X connect 5 0 9 0;
+#X connect 3 0 10 0;
+#X connect 5 0 17 0;
 #X connect 5 0 18 0;
-#X connect 9 0 0 0;
-#X connect 13 0 15 0;
-#X connect 15 0 17 0;
+#X connect 12 0 14 0;
+#X connect 14 0 16 0;
+#X connect 17 0 0 0;
 #X connect 18 0 2 0;
-#X connect 18 0 13 0;
+#X connect 18 0 12 0;
 #X coords 0 -1 1 1 130 240 2 30 50;

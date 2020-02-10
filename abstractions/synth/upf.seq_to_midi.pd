@@ -26,10 +26,10 @@
 #X obj 319 343 pack 0 0;
 #X obj 421 344 pack 0 0;
 #X obj 514 346 pack 0 0;
-#X obj 378 447 s midi_note;
 #X text 63 178 duration;
 #X text 106 200 ms;
 #X text 63 62 seq notes;
+#X obj 378 447 s midi_note_sequencer;
 #X connect 0 0 4 0;
 #X connect 1 0 5 0;
 #X connect 2 0 6 0;
@@ -64,8 +64,8 @@
 #X connect 21 1 25 1;
 #X connect 22 0 26 0;
 #X connect 22 1 26 1;
-#X connect 23 0 27 0;
-#X connect 24 0 27 0;
-#X connect 25 0 27 0;
-#X connect 26 0 27 0;
+#X connect 23 0 30 0;
+#X connect 24 0 30 0;
+#X connect 25 0 30 0;
+#X connect 26 0 30 0;
 #X coords 0 -1 1 1 80 160 2 60 60;

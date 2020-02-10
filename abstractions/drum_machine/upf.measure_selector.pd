@@ -18,7 +18,7 @@
 #X msg 240 266 32;
 #X msg 277 265 64;
 #X obj 46 5 loadbang;
-#X msg 48 28 2;
+#X msg 48 28 1;
 #X connect 0 0 8 0;
 #X connect 8 0 10 0;
 #X connect 8 1 11 0;
