@@ -1,14 +1,14 @@
-#N canvas 219 156 1013 872 10;
+#N canvas 443 92 1013 872 10;
 #X declare -path ./abstraction;
 #X obj 9 190 cnv 15 400 200 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#N canvas 329 267 952 691 analyze_MIDI_file 1;
+#N canvas 361 255 952 691 analyze_MIDI_file 0;
 #X obj 32 36 inlet;
 #X obj 202 35 inlet;
 #X obj 73 344 last3values;
 #X obj 49 143 midi-player;
 #X obj 47 81 openpanel;
-#X msg 49 110 read \$1;
+#X msg 49 104 read \$1;
 #X msg 200 386 open;
 #X msg 72 391 merge \$1 \$2;
 #X msg 250 402 clear;
@@ -112,6 +112,8 @@ them also as the starting 2 notes of the algorithmic recreation;
 #X msg 530 360 \; first2_vel \$1;
 #X text 493 28 Analyse trigger was connected with [t b b] but I deleted
 it;
+#X symbolatom 414 104 80 0 0 0 - - -;
+#X msg 432 136 symbol \$1;
 #X connect 0 0 21 0;
 #X connect 1 0 6 0;
 #X connect 2 0 7 0;
@@ -120,6 +122,7 @@ it;
 #X connect 4 0 5 0;
 #X connect 5 0 3 0;
 #X connect 5 0 24 0;
+#X connect 5 0 45 0;
 #X connect 6 0 13 0;
 #X connect 7 0 13 0;
 #X connect 8 0 13 0;
@@ -150,11 +153,13 @@ it;
 #X connect 38 0 35 1;
 #X connect 39 0 31 1;
 #X connect 40 0 34 0;
-#X restore 36 320 pd analyze_MIDI_file;
+#X connect 45 0 44 0;
+#X coords 0 -1 1 1 500 20 2 400 100;
+#X restore 38 341 pd analyze_MIDI_file;
 #X msg 36 272 load MIDI file;
 #X msg 153 294 view probabilities;
 #X msg 94 294 analyse;
-#X floatatom 36 343 5 0 0 1 BPM - BPM;
+#X floatatom 38 372 5 0 0 1 BPM - BPM;
 #X obj 7 394 cnv 15 400 400 empty empty empty 20 12 0 14 -261234 -66577
 0;
 #X obj 160 579 metro 200;
@@ -237,7 +242,7 @@ from it \, so we calculate its length and generate a random value between
 #X obj 286 697 * 0.95;
 #X msg 207 520 reset;
 #X obj 319 671 t b f;
-#X text 185 324 1 load a MIDI file 2 analyse it;
+#X text 248 282 1 load a MIDI file 2 analyse it;
 #X text 29 427 Monophonic play with these probs;
 #X text 137 697 velocity 0-127;
 #N canvas 0 23 812 583 getnextvel 0;
@@ -312,7 +317,7 @@ from it \, so we calculate its length and generate a random value between
 #X obj 36 243 r load_midi;
 #X obj 126 26 tgl 23 0 play empty Play 0 -7 0 10 -191407 -1 -1 0 1
 ;
-#X obj 160 484 r play;
+#X obj 160 455 r play;
 #X obj 319 621 r st_leg_out;
 #X obj 546 31 loadbang;
 #X obj 547 75 s st_leg_in;
@@ -322,7 +327,9 @@ slider;
 #X obj 26 754 pack 0 0;
 #X obj 26 785 s midi_note_markov;
 #X obj 305 556 r bpm_in_ms;
+#X obj 99 373 s bpm_from_midi_file;
 #X connect 1 0 5 0;
+#X connect 1 0 38 0;
 #X connect 2 0 1 0;
 #X connect 3 0 1 2;
 #X connect 4 0 1 1;

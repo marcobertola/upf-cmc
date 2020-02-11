@@ -1,31 +1,35 @@
-#N canvas 330 215 1237 763 12;
+#N canvas 203 164 1249 815 12;
 #X declare -path ./../abstractions;
 #X declare -path ./../abstractions/drum_machine;
 #X declare -path ./../abstractions/synth;
 #X declare -path ./../externals;
 #X declare -path ./../abstractions/markov;
-#X obj 916 18 declare -path ./../abstractions;
-#X obj 916 39 declare -path ./../abstractions/drum_machine;
-#X obj 52 59 cnv 15 732 530 empty empty empty 20 12 0 14 -261682 -66577
+#X obj 1034 18 declare -path ./../abstractions;
+#X obj 1034 39 declare -path ./../abstractions/drum_machine;
+#X obj 150 63 cnv 15 732 630 empty empty empty 20 12 0 14 -228856 -66577
 0;
-#X obj 916 61 declare -path ./../abstractions/synth;
-#N canvas 334 76 777 418 midi 0;
+#X obj 1034 61 declare -path ./../abstractions/synth;
+#N canvas 334 76 971 417 midi 0;
 #X obj 274 61 notein, f 16;
 #X obj 274 114 pack 0 0;
 #X obj 275 212 s midi_note;
 #X obj 102 115 r midi_note_sequencer;
 #X obj 363 114 r midi_note_markov;
 #X obj 565 114 r midi_cc_markov;
-#X obj 565 155 unpack 0 0;
-#X obj 564 211 s pan_midi_internal;
+#X obj 449 289 s pan_midi_internal;
+#X obj 594 290 s wet_internal;
+#X obj 565 155 route 0 1 2;
+#X obj 703 290 s feed_internal;
 #X connect 0 0 1 0;
 #X connect 0 1 1 1;
 #X connect 1 0 2 0;
 #X connect 3 0 2 0;
 #X connect 4 0 2 0;
-#X connect 5 0 6 0;
-#X connect 6 0 7 0;
-#X restore 725 11 pd midi;
+#X connect 5 0 8 0;
+#X connect 8 0 6 0;
+#X connect 8 1 7 0;
+#X connect 8 2 9 0;
+#X restore 1109 133 pd midi;
 #N canvas 0 23 702 463 engine 0;
 #X obj 41 48 r midi_note;
 #X obj 42 101 upf.midi_route, f 47;
@@ -36,6 +40,8 @@
 #X obj 368 165 upf.voice~;
 #X obj 192 335 throw~ synth;
 #X obj 192 290 upf.delay~;
+#X obj 501 34 loadbang;
+#X msg 500 67 \; pd dsp 1;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 1 3 0;
@@ -48,26 +54,33 @@
 #X connect 5 0 8 0;
 #X connect 6 0 8 0;
 #X connect 8 0 7 0;
-#X restore 651 11 pd engine;
-#X obj 916 106 declare -path ./../externals;
-#X obj 916 83 declare -path ./../abstractions/markov;
-#X obj 64 258 upf.step_selector;
-#X obj 288 258 upf.measure_selector;
-#X obj 469 465 upf.master_output~;
-#X obj 168 208 upf.sequencer_gui;
-#X obj 64 424 upf.additive_ui;
-#X obj 692 220 upf.mixer_synth;
-#X obj 468 220 upf.envelope_ui;
-#X obj 558 220 upf.delay_ui;
-#X obj 233 424 upf.fm_ui;
-#X obj 383 257 upf.seq_to_midi;
-#X obj 323 425 upf.synth_mode;
+#X connect 9 0 10 0;
+#X restore 1035 133 pd engine;
+#X obj 1034 106 declare -path ./../externals;
+#X obj 1034 83 declare -path ./../abstractions/markov;
+#X obj 547 569 upf.master_output~;
 #X text 9 7 Bertola / Ronchini / Fernandez https://github.com/marcobertola/upf-cmc
 , f 82;
-#X obj 56 67 cnv 15 720 130 empty empty empty 20 12 0 14 -66577 -66577
+#X obj 155 67 cnv 15 720 290 empty empty empty 20 12 0 14 -66577 -66577
 0;
-#X obj 61 72 cnv 15 710 120 empty empty empty 20 12 0 14 -261234 -66577
+#X obj 160 73 cnv 15 710 278 empty empty empty 20 12 0 14 -261234 -66577
 0;
-#X obj 63 83 markov_2nd_order;
-#X obj 267 83 random_control;
-#X text 225 207 transport;
+#X obj 574 364 upf.sequencer_mixer;
+#X obj 161 183 upf.additive_ui;
+#X obj 650 78 upf.envelope_ui;
+#X obj 738 78 upf.delay_ui;
+#X obj 329 183 upf.fm_ui;
+#X obj 418 183 upf.synth_mode;
+#X obj 162 78 markov_2nd_order;
+#X obj 374 78 random_control;
+#X obj 564 183 upf.measure_selector_markov;
+#X obj 155 360 cnv 15 348 328 empty empty empty 20 12 0 14 -33289 -66577
+0;
+#X obj 506 364 upf.mixer_synth;
+#X obj 159 364 cnv 15 340 320 empty empty empty 20 12 0 14 -261682
+-66577 0;
+#X obj 161 415 upf.step_selector;
+#X obj 377 415 upf.measure_selector;
+#X obj 162 369 upf.sequencer_gui;
+#X obj 162 580 upf.sampler_4_sequencer_v2;
+#X text 377 376 Step seqencer;
