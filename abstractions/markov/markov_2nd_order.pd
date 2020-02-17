@@ -315,8 +315,8 @@ from it \, so we calculate its length and generate a random value between
 #X obj 55 26 bng 23 250 50 0 load_midi empty Load_Midi_File -25 -7
 0 10 -191407 -1 -1;
 #X obj 36 243 r load_midi;
-#X obj 126 26 tgl 23 0 play empty Play 0 -7 0 10 -191407 -1 -1 0 1
-;
+#X obj 126 26 tgl 23 0 play in_play Play 0 -7 0 10 -191407 -1 -1 0
+1;
 #X obj 160 455 r play;
 #X obj 319 621 r st_leg_out;
 #X obj 546 31 loadbang;

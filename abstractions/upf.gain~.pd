@@ -1,4 +1,4 @@
-#N canvas 450 308 568 351 12;
+#N canvas 450 308 863 484 12;
 #X obj 17 16 vsl 15 128 0 100 0 0 \$0-gain \$0-gain-init empty 0 -9
 0 10 -162280 -1 -1 11430 1;
 #X obj 197 43 inlet~;
@@ -8,9 +8,10 @@
 #X msg 258 126 \$1 60;
 #X obj 197 178 *~;
 #X obj 197 220 outlet~;
-#X obj 445 43 loadbang;
-#X obj 443 102 s \$0-gain-init;
-#X msg 445 74 90;
+#X obj 609 43 loadbang;
+#X obj 607 102 s \$0-gain-init;
+#X msg 609 74 90;
+#X obj 389 18 inlet;
 #X connect 1 0 6 0;
 #X connect 2 0 3 0;
 #X connect 3 0 5 0;
@@ -19,4 +20,5 @@
 #X connect 6 0 7 0;
 #X connect 8 0 10 0;
 #X connect 10 0 9 0;
-#X coords 0 -1 1 1 30 140 2 10 10;
+#X connect 11 0 0 0;
+#X coords 0 -1 1 1 29 140 2 10 10;

@@ -1,9 +1,9 @@
-#N canvas 452 265 653 450 12;
+#N canvas 452 265 830 554 12;
 #X obj 45 100 vsl 20 128 20 1000 0 0 empty empty empty 0 -9 0 10 -162280
 -1 -1 4924 1;
 #X floatatom 34 237 5 0 0 0 - - -;
 #X obj 81 100 vsl 20 128 0 0.98 0 0 empty fdelay_internal empty 0 -9
-0 10 -162280 -1 -1 7776 1;
+0 10 -162280 -1 -1 8 1;
 #X floatatom 76 237 5 0 0 0 - - -;
 #X text 34 256 ms;
 #X obj 58 -7 loadbang;
@@ -14,7 +14,7 @@
 #X obj 115 296 s fdelay;
 #X obj 11 295 s delay_time;
 #X obj 119 100 vsl 20 128 0 1 0 0 empty empty empty 0 -9 0 10 -162280
--1 -1 650 1;
+-1 -1 0 1;
 #X text 121 79 wet;
 #X floatatom 117 237 5 0 0 0 - - -;
 #X text 117 255 wet;
@@ -22,33 +22,9 @@
 #X msg 42 22 400;
 #X msg 86 22 0.6;
 #X obj 205 -7 r wet_internal;
-#N canvas 412 129 522 343 midismooth 0;
-#X obj 140 47 inlet;
-#X obj 138 182 outlet;
-#X obj 139 82 / 127;
-#X obj 139 103 / 4;
-#X obj 138 143 line;
-#X msg 138 124 \$1 200;
-#X connect 0 0 2 0;
-#X connect 2 0 3 0;
-#X connect 3 0 5 0;
-#X connect 4 0 1 0;
-#X connect 5 0 4 0;
-#X restore 205 19 pd midismooth;
-#N canvas 412 129 522 343 midismooth 0;
-#X obj 140 47 inlet;
-#X obj 138 182 outlet;
-#X obj 139 82 / 127;
-#X obj 139 103 / 4;
-#X obj 138 143 line;
-#X msg 138 124 \$1 200;
-#X connect 0 0 2 0;
-#X connect 2 0 3 0;
-#X connect 3 0 5 0;
-#X connect 4 0 1 0;
-#X connect 5 0 4 0;
-#X restore 316 19 pd midismooth;
 #X obj 316 -7 r feed_internal;
+#X obj 205 20 lin_smooth;
+#X obj 316 18 lin_smooth;
 #X connect 0 0 1 0;
 #X connect 1 0 11 0;
 #X connect 2 0 3 0;
@@ -60,8 +36,8 @@
 #X connect 17 0 0 0;
 #X connect 18 0 2 0;
 #X connect 18 0 12 0;
-#X connect 19 0 20 0;
-#X connect 20 0 12 0;
-#X connect 21 0 2 0;
-#X connect 22 0 21 0;
+#X connect 19 0 21 0;
+#X connect 20 0 22 0;
+#X connect 21 0 12 0;
+#X connect 22 0 2 0;
 #X coords 0 -1 1 1 130 264 2 30 50;
