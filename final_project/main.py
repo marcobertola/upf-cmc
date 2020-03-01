@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
-import asr.asr as asr
-#from asr import asr
+from asr import asr
 #from asr import * as asr
 import argparse
+from osc import osc_client as osc 
 #from logic.logic import *
 #from nl import nlp_context
 #from nl.nlp import *
@@ -19,12 +19,14 @@ def main():
     parser = argparse.ArgumentParser(description='Assistant parameters')
     parser.add_argument('--asr', action='store_true')
     args = parser.parse_args()
-    
       
     if args.asr:
     	input_text = asr.processASR(ASR_MODE)
+ 
     else:
     	input_text = input("ask:")
+    
+    osc.sendValues()
 
 
 if __name__ == "__main__":
