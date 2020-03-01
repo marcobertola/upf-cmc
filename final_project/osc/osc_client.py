@@ -4,11 +4,6 @@ import random
 
 #function to send values to the pure data controller 
 def sendValues():
-	'''
-	Parameters:
-	------------
-		:input_word: input word to get value from 
-	'''
 
 	max_value = 10
 
