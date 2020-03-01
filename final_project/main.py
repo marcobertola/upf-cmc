@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
-
-from asr import asr
+import asr.asr as asr
+#from asr import asr
+#from asr import * as asr
 import argparse
 #from logic.logic import *
 #from nl import nlp_context
@@ -10,7 +11,7 @@ import argparse
 # 0 == Google Cloud Speech
 # 1 == Sphinx
 # 2 == Google Speech Recognition
-ASR_MODE = 2
+ASR_MODE = 2	
 DEBUG = False
 
 
