@@ -1,0 +1,27 @@
+high
+	high
+	best
+	top
+	highest
+	fast->[infers;has_attribute;speed]
+	old->[infers;has_attribute;age]
+	expensive->[infers;has_attribute;value]
+	strong->[infers;has_attribute;stamina]
+medium
+	medium
+	good
+	nice
+	average
+	mid age->[infers;has_attribute;age]
+	standard
+	regular
+	ordinary
+low
+	low
+	cheap->[infers;has_attribute;value]
+	poor
+	young->[infers;has_attribute;age]
+	slow->[infers;has_attribute;speed]
+	fat->[infers;has_attribute;speed]
+	lower
+	cheaper->[infers;has_attribute;value]
