@@ -23,6 +23,7 @@ pip install pyttsx3
 
 #### ASR:
 ```
+brew install portaudio
 pip3 install SpeechRecognition
 pip3 install pyaudio
 pip3 install google-api-python-client
