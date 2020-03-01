@@ -56,6 +56,5 @@ https://spacy.io/usage
 
 # Documentation:
 
-### Google drive folder:
-https://drive.google.com/open?id=1YAXUxJB9JZ3LmcVz-amh_N1jnGcECgld
+
 
