@@ -22,22 +22,24 @@ def main():
     args = parser.parse_args()
      
     #todo: making a loop 
-    if args.asr:
-    	input_text = asr.processASR(ASR_MODE)
- 
-    else:
-    	input_text = input("ask:")
 
-    #splitting the sentence into single words
-    input_words = input_text.split(' ')
-    
-    #calculating the distance between the words
-    #todo: decide if we want a diatance between a defined numbers of words or different
-    dist = w2midi.difference_word(input_words, len(input_words))
+    while True:
+        if args.asr:
+        	input_text = asr.processASR(ASR_MODE)
+     
+        else:
+        	input_text = input("ask:")
 
-    #sending distance values to osc server
-    #todo: decide how to send the sum of ditances
-    osc.sendValues(dist)
+        #splitting the sentence into single words
+        input_words = input_text.split(' ')
+        
+        #calculating the distance between the words
+        #todo: decide if we want a diatance between a defined numbers of words or different
+        dist = w2midi.difference_word(input_words, len(input_words))
+
+        #sending distance values to osc server
+        #todo: decide how to send the sum of ditances
+        osc.sendValues(dist)
 
 
 if __name__ == "__main__":
