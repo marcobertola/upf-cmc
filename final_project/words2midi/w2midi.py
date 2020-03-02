@@ -2,6 +2,10 @@ import numpy as np
 from gensim.models import KeyedVectors
 from itertools import repeat
 
+#model loading
+print('Wait for model to be loaded..')
+model_glove = KeyedVectors.load_word2vec_format('./words2midi/glove.6B.50d_word2vec.txt')
+
 
 def find_range(point, range_limits):
     n_limits = len(range_limits)
@@ -26,10 +30,10 @@ def colapse_into_10(space_50d):
 
 def embspace_to_midi(word_embedding, n_words):
     """
-    word_embedding: The 50dim vector resulting of difference between multiple words embedding
-    n_words: Number of words used to create the word_embedding
+        word_embedding: The 50dim vector resulting of difference between multiple words embedding
+        n_words: Number of words used to create the word_embedding
     """
-    embedding = np.load('mappings.npy')
+    embedding = np.load('./words2midi/mappings.npy')
     reduced_10 = colapse_into_10(embedding)
     maxs = np.max(reduced_10, axis=0)*n_words
     mins = np.min(reduced_10, axis=0)*n_words
@@ -42,3 +46,10 @@ def embspace_to_midi(word_embedding, n_words):
     for dimension in range(10):
         midi[dimension] = find_range(reduced_embedding[dimension], mappings[dimension])
     return midi
+
+def difference_word(input_words, nb_words):
+    #todo: loop in case more than 2 words are received 
+    diffwords = model_glove[input_words[0]] - model_glove[input_words[1]]
+    dist = embspace_to_midi(diffwords, nb_words)
+    print('Distance: {}'.format(dist))
+    return dist
