@@ -34,7 +34,7 @@
 #X obj 514 231 r a8;
 #X obj 44 18 inlet;
 #X obj 181 399 outlet~;
-#X obj 181 336 *~ 0.4;
+#X obj 181 336 *~ 1;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 0 3 0;
