@@ -3,7 +3,8 @@
 from asr import asr
 #from asr import * as asr
 import argparse
-from osc import osc_client as osc 
+from osc import osc_client as osc
+from time import sleep
 from words2midi import w2midi
 #from logic.logic import *
 #from nl import nlp_context
@@ -19,28 +20,37 @@ DEBUG = False
 def main():
     parser = argparse.ArgumentParser(description='Assistant parameters')
     parser.add_argument('--asr', action='store_true')
+    parser.add_argument('-n', help='Number of words taken into account when creating the parameters for a single sound. Default n=2', default=2)
     args = parser.parse_args()
-     
+    n_words_sound = int(args.n)
     #todo: making a loop 
 
     while True:
-        if args.asr:
-        	input_text = asr.processASR(ASR_MODE)
-     
-        else:
-        	input_text = input("ask:")
+        try:
+            if args.asr:
+            	input_text = asr.processASR(ASR_MODE)
+         
+            else:
+                print("#########################")
+                input_text = input("ask:")
 
-        #splitting the sentence into single words
-        input_words = input_text.split(' ')
-        
-        #calculating the distance between the words
-        #todo: decide if we want a diatance between a defined numbers of words or different
-        dist = w2midi.difference_word(input_words, len(input_words))
+            #splitting the sentence into single words
+            input_words = input_text.split(' ')
+            for idx in range(len(input_words) - n_words_sound + 1):
+                group_words = input_words[idx:idx+n_words_sound]  # Calculate the distance for every combination of n-consecutive words
+                print("Words: ", group_words)
+                #calculating the distance between the words
+                #todo: decide if we want a diatance between a defined numbers of words or different
+                dist = w2midi.difference_word(group_words, len(group_words))
 
-        #sending distance values to osc server
-        #todo: decide how to send the sum of ditances
-        osc.sendValues(dist)
-
+                #sending distance values to osc server
+                #todo: decide how to send the sum of ditances
+                osc.sendValues(dist)
+                sleep(1.5)
+        except Exception as e:
+            print("Exception: ")
+            print(str(e))
+            print("Program continues...")
 
 if __name__ == "__main__":
     main()
