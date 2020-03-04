@@ -49,7 +49,7 @@ def embspace_to_midi(word_embedding, n_words):
         word_embedding: The 50dim vector resulting of difference between multiple words embedding
         n_words: Number of words used to create the word_embedding
     """
-    embedding = np.load('./mappings.npy')
+    embedding = np.load('./words2midi/mappings.npy')
     reduced_25 = colapse_into_25(embedding)
     mappings = get_mappings(reduced_25)
 

@@ -6,6 +6,7 @@ import argparse
 from osc import osc_client as osc
 from time import sleep
 from words2midi import w2midi
+import re
 #from logic.logic import *
 #from nl import nlp_context
 #from nl.nlp import *
@@ -35,7 +36,7 @@ def main():
                 input_text = input("ask:")
 
             #splitting the sentence into single words
-            input_words = input_text.split(' ')
+            input_words = re.sub(r' +', ' ', input_text).strip().lower().split(' ')
             for idx in range(len(input_words) - n_words_sound + 1):
                 group_words = input_words[idx:idx+n_words_sound]  # Calculate the distance for every combination of n-consecutive words
                 print("Words: ", group_words)
