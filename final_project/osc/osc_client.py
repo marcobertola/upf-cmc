@@ -20,9 +20,26 @@ def sendValues(distance):
 	except Exception as e:
 		print('Client could not be created \n {}'.format(e))
 		return	
-	print('Values that will be sent: {}\n'.format(distance))
 
 	# Send array message
-	client.send_message("/values", distance)   
+	client.send_message("/list", distance)   
 
 	return
+
+def sendTriggerValue(trigger):
+	ip = "127.0.0.1"
+	port = 1337
+
+	# Create client
+	try:
+		client = SimpleUDPClient(ip, port) 
+	except Exception as e:
+		print('Client could not be created \n {}'.format(e))
+		return	
+
+	
+	client.send_message("/trigger", trigger)
+
+	return
+	
+
