@@ -16,7 +16,7 @@ args = parser.parse_args()
 
 # create dispatcher
 dispatcher = Dispatcher()
-dispatcher.map("/list", print_handler)
+dispatcher.map("/distance", print_handler)
 dispatcher.map("/trigger", print_handler)
 
 # create server

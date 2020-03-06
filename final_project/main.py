@@ -27,7 +27,8 @@ def main():
     parser.add_argument('-n', help='Number of words taken into account when creating the parameters for a single sound. Default n=2', default=2)
     args = parser.parse_args()
     n_words_sound = int(args.n)
-    #todo: making a loop 
+    #instatntiation of osc client class
+    osc_client = osc.OSCClient()
 
     while True:
         try:
@@ -42,8 +43,9 @@ def main():
             input_words = re.sub(r' +', ' ', input_text).strip().lower().split(' ')
 
             #sending starting trigger value
+            osc_client.client.send_message("/trigger", START)
 
-            osc.sendTriggerValue(START)
+            #sending distances
             for idx in range(len(input_words) - n_words_sound + 1):
                 
                 group_words = input_words[idx:idx+n_words_sound]  # Calculate the distance for every combination of n-consecutive words
@@ -53,11 +55,11 @@ def main():
                 dist = w2midi.difference_word(group_words, len(group_words))
                 #sending distance values to osc server
                 #todo: decide how to send the sum of ditances
-                osc.sendValues(dist)
-                #sleep(1.5)
+                osc_client.sendValues(dist)
+                sleep(0.2)
 
-             #sending stop trigger value
-            osc.sendTriggerValue(STOP)
+            #sending stop trigger value
+            osc_client.sendTriggerValue(STOP)
 
         except Exception as e:
             print("Exception: ")
