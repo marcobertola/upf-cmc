@@ -33,7 +33,7 @@ def main():
     while True:
         try:
             if args.asr:
-            	input_text = asr.processASR(ASR_MODE)
+                input_text = asr.processASR(ASR_MODE)
          
             else:
                 print("#########################")

@@ -57,4 +57,7 @@ def setSentence(sentence, n_words_sound):
         print("Exception: ")
         print(str(e))
         print("Program continues...")
+        return True
+    else:
+        return False
 

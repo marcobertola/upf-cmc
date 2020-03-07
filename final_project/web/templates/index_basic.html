@@ -1,19 +1,45 @@
 <html>
 <title>Wonderful app</title>
 <head>
-<!-- <script src="http://code.jquery.com/jquery-latest.js"></script>  -->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
 <body>
 	<!-- <script type="text/javascript" src="{{ url_for('static', filename='submit.js') }}"></script> -->
-	<form method="post">
-	   Name: <input name="sentence" id="sentence" type="text" /><br /><br />
-	   <input type="submit" value="Submit" />
-	 </form>
-	 <br/>
-	 Your sentence will display below..... <br />
-	 ==============================<br />
-	 <div id="results">
-	    <!-- All data will display here  -->
-	 </div>
+	Write here: <input id="texttosend" name="sentence" id="sentence" type="text" /><br /><br />
+	<button id="sendbutton">Send </button>
+	<br/>
+	Your sentence will display below..... <br />
+	==============================<br />
+	<div id="results">
+	<!-- All data will display here  -->
+	</div>
 </body>
+<script>
+	$("#sendbutton").click(
+		function(){
+			var text = $("#texttosend").val();
+			$.ajax({
+				url: '/parse',
+				data: { text: text},
+				method: 'POST',
+				success: function(a, e, d){
+					if(a == "fail"){
+						$("#results").append("Something is wrong in this sentence: " + text);
+					}else{
+						$("#results").append(text);
+					}
+					$("#results").append("<br/>");
+					$("#texttosend").val('');
+				},
+			})
+		}
+	);
+
+	$(document).keypress(function(e){
+		if (e.which == 13){
+			$("#sendbutton").click();
+		}
+	});
+
+</script>
 </html>
