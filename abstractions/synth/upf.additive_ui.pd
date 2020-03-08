@@ -2,20 +2,20 @@
 #X obj 106 124 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -228856
 -1 -1 12700 1;
 #X obj 76 325 s a1;
-#X obj 125 124 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 6300 1;
-#X obj 145 124 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 6300 1;
+#X obj 126 125 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 146 125 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
 #X obj 165 124 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 6300 1;
+-1 -1 0 1;
 #X obj 185 124 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 6300 1;
+-1 -1 0 1;
 #X obj 205 124 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 6300 1;
+-1 -1 0 1;
 #X obj 224 124 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 6300 1;
+-1 -1 0 1;
 #X obj 244 124 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 6300 1;
+-1 -1 0 1;
 #X obj 110 325 s a2;
 #X obj 147 325 s a3;
 #X obj 182 325 s a4;
@@ -28,19 +28,19 @@
 #X obj 106 58 int 1;
 #X text 155 103 harmonics;
 #X obj 310 20 r harmonics;
-#X obj 269 126 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+#X obj 264 124 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
-#X obj 289 126 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+#X obj 284 124 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
-#X obj 309 124 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+#X obj 304 124 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
-#X obj 329 126 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+#X obj 324 124 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
-#X obj 350 126 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+#X obj 345 124 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
-#X obj 368 126 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+#X obj 365 124 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
-#X obj 388 126 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+#X obj 385 124 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 310 44 unpack 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 #X obj 363 325 s a9;

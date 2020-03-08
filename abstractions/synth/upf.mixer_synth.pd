@@ -9,7 +9,7 @@
 #X obj 128 206 r pan_midi_internal;
 #X text 32 264 synth;
 #X obj 238 29 loadbang;
-#X msg 252 93 55;
+#X msg 252 93 65;
 #X connect 0 0 4 0;
 #X connect 4 0 5 0;
 #X connect 5 0 1 0;
