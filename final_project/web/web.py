@@ -9,7 +9,7 @@ app = Flask(__name__)
 def my_form():
     return render_template('index_basic.html')
 
-@app.route('/parse', methods=['POST'])
+@app.route('/parse', methods=['POST', 'GET'])
 def my_form_post():
     sentence = request.form['text']
     print("Sentence: ", sentence)
@@ -19,3 +19,9 @@ def my_form_post():
     else:
         return jsonify("ok")
 
+@app.after_request
+def after_request(response):
+    response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate, public, max-age=0"
+    response.headers["Expires"] = 0
+    response.headers["Pragma"] = "no-cache"
+    return response
