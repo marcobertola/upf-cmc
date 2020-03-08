@@ -66,11 +66,11 @@ def main():
             print(str(e))
             print("Program continues...")
         else:
-            osc_client.send_message("/trigger", START)
+            osc_client.sendTriggerValue("/trigger", START)
             for message in messages_list:
                 osc_client.sendValues(message)
                 sleep(0.2)
-            osc_client.send_message(STOP)
+            osc_client.sendTriggerValue(STOP)
 
 
 
