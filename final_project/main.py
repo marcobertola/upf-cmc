@@ -43,8 +43,7 @@ def main():
             input_words = re.sub(r' +', ' ', input_text).strip().lower().split(' ')
 
             #sending starting trigger value
-            osc_client.client.send_message("/trigger", START)
-
+            messages_list = []
             #sending distances
             for idx in range(len(input_words) - n_words_sound + 1):
                 
@@ -55,16 +54,24 @@ def main():
                 dist = w2midi.difference_word(group_words, len(group_words))
                 #sending distance values to osc server
                 #todo: decide how to send the sum of ditances
-                osc_client.sendValues(dist)
-                sleep(0.2)
+                #osc_client.sendValues(dist)
+                messages_list.append(dist)
+                #sleep(0.2)
 
             #sending stop trigger value
-            osc_client.sendTriggerValue(STOP)
+            #osc_client.sendTriggerValue(STOP)
 
         except Exception as e:
             print("Exception: ")
             print(str(e))
             print("Program continues...")
+        else:
+            osc_client.send_message("/trigger", START)
+            for message in messages_list:
+                osc_client.sendValues(message)
+                sleep(0.2)
+            osc_client.send_message(STOP)
+
 
 
 if __name__ == "__main__":
