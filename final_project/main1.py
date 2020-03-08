@@ -61,7 +61,7 @@ def setSentence(sentence, n_words_sound):
         return True
     else:
 
-        osc_client.sendTriggerValue("/trigger", START)
+        osc_client.sendTriggerValue(START)
         for message in messages_list:
             osc_client.sendValues(message)
             sleep(0.2)
